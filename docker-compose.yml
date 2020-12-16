@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  web:
+    image: halo-infinite-wait:latest
+    container_name: halo-infinite-wait
+    build: .
+    expose:
+      - 80
+    environment:
+      VIRTUAL_HOST: haloinfinitewait.com
+      LETSENCRYPT_HOST: haloinfinitewait.com
+      LETSENCRYPT_EMAIL: lavergne.remy@gmail.com
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
