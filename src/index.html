@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Halo</title>
-    <link
-      rel="stylesheet"
-      href="<%=htmlWebpackPlugin.files.chunks.main.css %>"
-    />
-  </head>
 
-  <body>
-    <main class="content">
-      <figure class="content__bg">
-        <img src="./assets/img/background.jpg" />
-      </figure>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Halo Infinite Wait</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+</head>
 
-      <section id="timer"></section>
-    </main>
-    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
-  </body>
+<body>
+  <main class="content">
+    <p class="app-name">Halo Infinite Wait...</p>
+    <figure class="content__bg">
+      <img src="./assets/img/background.jpg" />
+    </figure>
+
+    <section id="timer"></section>
+  </main>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+
 </html>
