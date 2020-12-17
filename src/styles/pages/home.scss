@@ -1,5 +1,6 @@
 /* VARIABLES */
 $media_small: 768px;
+$media_mobile: 600px;
 
 
 /* MAIN CONTENT */
@@ -53,9 +54,15 @@ $media_small: 768px;
 }
 
 .timer__countdown {
+  display: flex;
+
   padding: 0;
   text-shadow: 2px 2px 2px black;
   color: rgb(236, 236, 236);
+
+  @media all and (max-width: $media_mobile) {
+    flex-direction: column;
+  }
 }
 
 .timer__countdown__item {
@@ -70,6 +77,11 @@ $media_small: 768px;
   @media all and (max-width: $media_small) {
     font-size: 1.125rem;
     padding: 0.75rem;
+  }
+
+  @media all and (max-width: $media_mobile) {
+    font-size: 1rem;
+    padding: 0.5rem;
   }
 }
 
@@ -101,6 +113,7 @@ $media_small: 768px;
 }
 
 .games__list {
+  display: flex;
   margin: 0;
   padding: 0;
 
@@ -113,7 +126,7 @@ $media_small: 768px;
     &::after {
       content: '';
       position: absolute;
-      right: -1px;
+      right: 0;
       top: 50%;
 
       display: inline-block;
@@ -131,12 +144,29 @@ $media_small: 768px;
       }
     }
   }
+
+  @media all and (max-width: $media_mobile) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      margin: 0.2rem 0;
+      padding-right: 0;
+      text-align: center;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
 }
 
 .games__btn {
   appearance: none;
   background: transparent;
   border: none;
+  padding: 0 0.8rem;
 
   text-shadow: 2px 2px 2px black;
   color: rgb(236, 236, 236);
