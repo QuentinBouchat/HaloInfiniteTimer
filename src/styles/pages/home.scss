@@ -1,18 +1,20 @@
-.app-name {
-  position: absolute;
-  font-family: "Russo One", sans-serif;
-  color: rgb(236, 236, 236);
-  font-size: 2em;
-  margin-left: 20px;
-}
+/* VARIABLES */
+$media_small: 768px;
+$media_mobile: 600px;
 
+
+/* MAIN CONTENT */
 .content {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100vh;
 }
 
 .content__bg {
+  position: absolute;
   margin: 0;
   width: 100%;
   height: 100%;
@@ -25,17 +27,159 @@
   }
 }
 
-#timer {
+
+/* TIMER */
+.timer {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
 
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 4rem;
+.timer__title {
+  font-family: "Russo One", sans-serif;
+  font-size: 3em;
+  font-weight: normal;
+  letter-spacing: 0.125rem;
   text-transform: uppercase;
-  text-shadow: 2px 2px black;
-  white-space: nowrap;
-  color: white;
+  text-shadow: 2px 2px 2px black;
+  color: rgb(236, 236, 236);
 
-  transform: translate(-50%, -50%);
+  @media all and (max-width: $media_small) {
+    font-size: 1.5rem;
+  }
+}
+
+.timer__countdown {
+  display: flex;
+
+  padding: 0;
+  text-shadow: 2px 2px 2px black;
+  color: rgb(236, 236, 236);
+
+  @media all and (max-width: $media_mobile) {
+    flex-direction: column;
+  }
+}
+
+.timer__countdown__item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+
+  @media all and (max-width: $media_small) {
+    font-size: 1.125rem;
+    padding: 0.75rem;
+  }
+
+  @media all and (max-width: $media_mobile) {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+.countdown__item__number {
+  align-items: center;
+  font-size: 4.5rem;
+
+  @media all and (max-width: $media_small) {
+    font-size: 3.375rem;
+  }
+}
+
+
+/* GAMES LIST */
+.games {
+  margin-top: 20px;
+  text-shadow: 2px 2px 2px black;
+  color: rgb(236, 236, 236);
+}
+
+.games__title {
+  margin: 0 0 0.2rem 0;
+
+  font-size: 1rem;
+  font-family: "Russo One", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.games__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    display: inline;
+    list-style: none;
+    padding-right: 1px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+
+      display: inline-block;
+      width: 1px;
+      height: 1rem;
+      background: rgb(236, 236, 236);
+
+      transform: translateY(-50%);
+    }
+
+    &:last-child {
+      padding-right: 0;
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  @media all and (max-width: $media_mobile) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      margin: 0.2rem 0;
+      padding-right: 0;
+      text-align: center;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
+
+.games__btn {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0 0.8rem;
+
+  text-shadow: 2px 2px 2px black;
+  color: rgb(236, 236, 236);
+  transition: all 0.4s ease-in-out;
+
+  cursor: pointer;
+
+  &:hover {
+    text-shadow: 0px 0px 2px white;
+  }
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
 }
