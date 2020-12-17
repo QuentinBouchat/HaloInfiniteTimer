@@ -1,29 +1,28 @@
-import { DateTime, Interval } from 'luxon';
 import './styles/style.scss';
 
-const xboxRealease = DateTime.local(2020, 11, 10);
+let startDate: number;
 
-function calculateTimeSinceXboxRealease() {
-    const now = DateTime.local();
+// function calculateTimeSinceXboxRealease() {
+//     const now = DateTime.local();
 
-    const interval = Interval.fromDateTimes(xboxRealease, now);
+//     const interval = Interval.fromDateTimes(xboxRealease, now);
 
-    const days = Math.floor(interval.length('days'));
+//     const days = Math.floor(interval.length('days'));
 
-    return {
-        days: Math.floor(interval.length('days')),
-        hours: Math.floor(interval.length('hours') % 24),
-        minutes: Math.floor(interval.length('minutes') % 24 % 60),
-        seconds: Math.floor(interval.length('seconds') % 24 % 60 % 60),
-    };
-}
+//     return {
+//         days: Math.floor(interval.length('days')),
+//         hours: Math.floor(interval.length('hours') % 24),
+//         minutes: Math.floor(interval.length('minutes') % 24 % 60),
+//         seconds: Math.floor(interval.length('seconds') % 24 % 60 % 60),
+//     };
+// }
 
-function updateTimer() {
-    const times = calculateTimeSinceXboxRealease();
-    document.getElementById('timer').innerText = `${times.days} days - ${times.hours} hours - ${times.minutes} minutes - ${times.seconds} seconds`;
-}
+// function updateTimer() {
+//     const times = calculateTimeSinceXboxRealease();
+//     document.getElementById('timer').innerText = `${times.days} days - ${times.hours} hours - ${times.minutes} minutes - ${times.seconds} seconds`;
+// }
 
-setInterval(updateTimer, 1000);
+// setInterval(updateTimer, 1000);
 
 (function () {
     const second = 1000,
@@ -31,30 +30,16 @@ setInterval(updateTimer, 1000);
         hour = minute * 60,
         day = hour * 24;
 
-    let birthday = "Sep 30, 2021 00:00:00",
-        countDown = new Date(birthday).getTime(),
-        x = setInterval(function () {
+    startDate = new Date(2020, 10, 10).getTime();
 
-            let now = new Date().getTime(),
-                distance = countDown - now;
+    let x = setInterval(function () {
 
-            document.getElementById("days").innerText = Math.floor(distance / (day)).toString(),
-                document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)).toString(),
-                document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)).toString(),
-                document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second).toString();
+        let now = new Date().getTime();
+        let distance = now - startDate;
 
-            //do something later when date is reached
-            if (distance < 0) {
-                let headline = document.getElementById("headline"),
-                    countdown = document.getElementById("countdown"),
-                    content = document.getElementById("content");
-
-                headline.innerText = "It's my birthday!";
-                countdown.style.display = "none";
-                content.style.display = "block";
-
-                clearInterval(x);
-            }
-            //seconds
-        }, 0)
+        document.getElementById("days").innerText = Math.floor(distance / (day)).toString(),
+            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)).toString(),
+            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)).toString(),
+            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second).toString();
+    }, 0)
 }());
