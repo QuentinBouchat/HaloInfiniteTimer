@@ -49,7 +49,7 @@ function calculateTimeSince(since: DateTime) {
     };
 }
 
-function getSinceDateFromHaleGame(game: HaloGamesEnum) {
+function getSinceDateFromHaloGame(game: HaloGamesEnum) {
     switch (game) {
         case HaloGamesEnum.HALO5: return halo5Release;
         case HaloGamesEnum.HALO4: return halo4Release;
@@ -62,7 +62,7 @@ function getSinceDateFromHaleGame(game: HaloGamesEnum) {
 }
 
 function updateTimer() {
-    const since = getSinceDateFromHaleGame(currentGame);
+    const since = getSinceDateFromHaloGame(currentGame);
     const times = calculateTimeSince(since);
     document.getElementById("days").innerText = times.days.toString(),
     document.getElementById("hours").innerText = times.hours.toString(),
