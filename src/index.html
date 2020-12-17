@@ -18,19 +18,27 @@
       <img src="./assets/img/background.jpg" />
     </figure>
 
-    <div class="timer-container">
-      <h1 class="app-name">Halo Infinite Wait</h1>
-      <div id="countdown">
-        <ul>
-          <li><span id="days"></span>days</li>
-          <li><span id="hours"></span>Hours</li>
-          <li><span id="minutes"></span>Minutes</li>
-          <li><span id="seconds"></span>Seconds</li>
-        </ul>
+    <section class="timer">
+      <h1 class="timer__title">Halo Infinite Wait</h1>
+
+      <ul class="timer__countdown">
+        <li class="timer__countdown__item"><span class="countdown__item__number" id="days"></span>days</li>
+        <li class="timer__countdown__item"><span class="countdown__item__number" id="hours"></span>Hours</li>
+        <li class="timer__countdown__item"><span class="countdown__item__number" id="minutes"></span>Minutes</li>
+        <li class="timer__countdown__item"><span class="countdown__item__number" id="seconds"></span>Seconds</li>
+      </ul>
+
+      <div class="games">
+        since 
+        <button class="games__btn" data-game="Xbox">Release date</button> | 
+        <button class="games__btn" data-game="Halo5">Halo 5</button> | 
+        <button class="games__btn" data-game="Halo4">Halo 4</button> | 
+        <button class="games__btn" data-game="HaloReach">Halo Reach</button> | 
+        <button class="games__btn" data-game="Halo3">Halo 3</button> | 
+        <button class="games__btn" data-game="Halo2">Halo 2</button> | 
+        <button class="games__btn" data-game="HaloCE">Halo CE</button>
       </div>
-      <div class="games">since <a href="#">Release date</a> | <a href="#">Halo 5</a> | <a href="#">Halo Reach</a> | <a href="#">Halo
-          4</a> | <a href="#">Halo 3</a> | <a href="#">Halo 2</a> | <a href="#">Halo CE</a></div>
-    </div>
+    </section>
 
 
 

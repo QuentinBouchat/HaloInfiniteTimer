@@ -1,10 +1,8 @@
-.app-name {
-  font-family: "Russo One", sans-serif;
-  color: rgb(236, 236, 236);
-  font-size: 3em;
-  // margin-left: 20px;
-}
+/* VARIABLES */
+$media_small: 768px;
 
+
+/* MAIN CONTENT */
 .content {
   position: relative;
   display: flex;
@@ -28,11 +26,9 @@
   }
 }
 
-#countdown {
-  color: rgb(236, 236, 236);
-}
 
-.timer-container {
+/* TIMER */
+.timer {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -42,17 +38,27 @@
   height: 100vh;
 }
 
-.games {
-  margin-top: 20px;
-}
-
-h1 {
+.timer__title {
+  font-family: "Russo One", sans-serif;
+  font-size: 3em;
   font-weight: normal;
   letter-spacing: 0.125rem;
   text-transform: uppercase;
+  text-shadow: 2px 2px 2px black;
+  color: rgb(236, 236, 236);
+
+  @media all and (max-width: $media_small) {
+    font-size: 1.5rem;
+  }
 }
 
-li {
+.timer__countdown {
+  padding: 0;
+  text-shadow: 2px 2px 2px black;
+  color: rgb(236, 236, 236);
+}
+
+.timer__countdown__item {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -60,28 +66,24 @@ li {
   list-style-type: none;
   padding: 1em;
   text-transform: uppercase;
-}
 
-ul {
-  padding: 0;
-}
-
-li span {
-  align-items: center;
-  font-size: 4.5rem;
-}
-
-@media all and (max-width: 768px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  li {
+  @media all and (max-width: $media_small) {
     font-size: 1.125rem;
     padding: 0.75rem;
   }
+}
 
-  li span {
+.countdown__item__number {
+  align-items: center;
+  font-size: 4.5rem;
+
+  @media all and (max-width: $media_small) {
     font-size: 3.375rem;
   }
+}
+
+
+/* GAMES LIST */
+.games {
+  margin-top: 20px;
 }
