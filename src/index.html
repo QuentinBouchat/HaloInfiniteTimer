@@ -2,9 +2,22 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NWD1CKFQPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-NWD1CKFQPD');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta property="og:url" content="https://haloinfinitewait.com" />
+  <meta property="og:title" content="Halo Infinite Wait" />
+  <meta property="og:description" content="Since how many time are you waiting for Halo Infinite game ?" />
+  <meta property="og:image" content="https://haloinfinitewait.com/assets/img/background.jpg" />
   <title>Halo Infinite Wait</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,7 +42,7 @@
       </ul>
 
       <div class="games">
-        <h2 class="games__title">since</h2> 
+        <h2 class="games__title">since</h2>
         <ul class="games__list">
           <li><button class="games__btn" data-game="Xbox">Release date</button></li>
           <li><button class="games__btn" data-game="Halo5">Halo 5</button></li>
